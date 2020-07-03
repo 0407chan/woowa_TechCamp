@@ -23,7 +23,7 @@
 - 기존의 for - loop 중에, forEach, map, filter, reduce 등을 활용해서 수정할 수 있다면 수정한다.
 - 배열로 되어 있는 자료구조를 JavaScript의 Set으로 수정한다.
 
-##### 추가미션
+### 추가미션
 
 - JavaScript Classes 에서 상속을 어떻게 구현하는 것인지, 상속은 어떤 원리인지 알아보고 정리한다
   - 관련 키워드 : extend, prototype
