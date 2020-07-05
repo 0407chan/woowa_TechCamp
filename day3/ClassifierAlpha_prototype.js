@@ -7,15 +7,14 @@ ClassifierAlpha.prototype.isFactor = function (potentialFactor) {
 };
 
 ClassifierAlpha.prototype.factors = function () {
-  let factorSet = [];
+  let factorSet = new Set();
   for (let pod = 1; pod <= Math.sqrt(this.number); pod++) {
     if (this.isFactor(pod)) {
-      if (!factorSet.includes(pod)) factorSet.push(pod);
-      if (!factorSet.includes(this.number / pod))
-        factorSet.push(this.number / pod);
+      factorSet.add(pod);
+      factorSet.add(this.number / pod);
     }
   }
-  return factorSet;
+  return Array.from(factorSet);
 };
 ClassifierAlpha.prototype.isPerfect = function () {
   let currentFactor = this.factors();
@@ -37,7 +36,8 @@ ClassifierAlpha.prototype.isPrime = function () {
 
 ClassifierAlpha.prototype.equalSet = function (aset, bset) {
   if (aset.length !== bset.length) return false;
-  for (let a of aset) if (!bset.includes(a)) return false;
+  for (let a of aset)
+    if (!bset.includes(a)) return false;
   return true;
 };
 
